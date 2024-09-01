@@ -1,15 +1,9 @@
-import { openai } from '@ai-sdk/openai'
-import { streamText, convertToCoreMessages } from 'ai'
+import { NextResponse } from 'next/server'
 
-export const maxDuration = 30
+export async function POST(request: Request) {
+	const { message } = await request.json()
 
-export async function POST(req: Request) {
-	const { messages } = await req.json()
+	const botResponse = `Opa! Muito prazer ${message}. Em que posso ajudar-lo?`
 
-	const result = await streamText({
-		model: openai('gpt-3.5-turbo'),
-		messages: convertToCoreMessages(messages)
-	})
-
-	return result.toDataStreamResponse()
+	return NextResponse.json({ response: botResponse })
 }
