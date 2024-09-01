@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { SetStateAction, useEffect, useState } from 'react'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { ScrollArea } from '@/components/ui/scroll-area'
@@ -21,11 +21,11 @@ export default function Home() {
 	const [typingMessage, setTypingMessage] = useState('')
 	const [isTyping, setIsTyping] = useState(false)
 
-	const handleInputChange = (e) => {
+	const handleInputChange = (e: { target: { value: SetStateAction<string> } }) => {
 		setInput(e.target.value)
 	}
 
-	const handleSubmit = async (e) => {
+	const handleSubmit = async (e: { preventDefault: () => void }) => {
 		e.preventDefault()
 
 		if (input.trim() === '') return
@@ -50,8 +50,11 @@ export default function Home() {
 
 			const data = await response.json()
 			setTypingMessage(data.response)
-			setMessages((prevMessages) => [...prevMessages, { id: prevMessages.length + 1, role: 'ai', content: typingMessage }])
 			setIsTyping(true)
+
+			setTimeout(() => {
+				setMessages((prevMessages) => [...prevMessages, { id: prevMessages.length + 1, role: 'ai', content: 'aeeee' }])
+			}, 500)
 
 		} catch (error) {
 			console.error('Error:', error)
@@ -87,7 +90,7 @@ export default function Home() {
 		<div className="flex flex-col gap-2 items-center justify-center bg-zinc-950 min-h-screen">
 			<Card className="w-[440px] bg-zinc-900 border-none">
 				<CardHeader className='border-b border-zinc-600/20'>
-					<CardTitle className="text-white">Chat Inte</CardTitle>
+					<CardTitle className="text-white">Chat by Neitan</CardTitle>
 					<CardDescription>Converse com a inteligência artificial sobre a vida.</CardDescription>
 				</CardHeader>
 				<CardContent>
@@ -112,7 +115,7 @@ export default function Home() {
 											<AvatarFallback>Houston:</AvatarFallback>
 										</Avatar>
 										<p className="leading-relaxed">
-											<span className="block font-bold text-slate-100">AI:</span>
+											<span className="block font-bold text-slate-100">Houston:</span>
 											{m.content}
 										</p>
 									</div>
