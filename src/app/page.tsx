@@ -86,7 +86,7 @@ export default function Home() {
 
 	return (
 		<div className="flex flex-col gap-2 items-center justify-center bg-zinc-950 min-h-screen">
-			<Card className="w-[3400px] bg-zinc-900 border-none">
+			<Card className="max-w-[380px] bg-zinc-900 border-none">
 				<CardHeader className="border-b border-zinc-600/20">
 					<CardTitle className="text-white">Nathan, we have a problem.</CardTitle>
 					<CardDescription>Ask me anything...</CardDescription>
