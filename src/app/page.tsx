@@ -92,7 +92,10 @@ export default function Home() {
 					<CardDescription>Ask me anything...</CardDescription>
 				</CardHeader>
 				<CardContent>
-					<ScrollArea ref={messagesEndRef} className="lg:h-[600px] max-sm:h-full w-full space-y-4 max-sm:pb-10 pr-6">
+					<ScrollArea
+						ref={messagesEndRef}
+						className="lg:h-[600px] max-sm:h-screen w-full space-y-4 max-sm:pb-10 pr-6"
+					>
 						{messages.map(message => (
 							<div
 								key={message.id}
@@ -115,7 +118,7 @@ export default function Home() {
 						))}
 					</ScrollArea>
 				</CardContent>
-				<CardFooter className='max-sm:fixed  max-sm:p-2 max-sm:bottom-0 max-sm:w-full max-sm:bg-zinc-800'>
+				<CardFooter className="max-sm:fixed  max-sm:p-2 max-sm:bottom-0 max-sm:w-full max-sm:bg-zinc-800">
 					<form className="flex gap-2 w-full" onSubmit={handleSubmit}>
 						<Input
 							className="w-full text-zinc-100 bg-zinc-700 border-none placeholder:text-zinc-500"
