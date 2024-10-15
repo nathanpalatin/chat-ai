@@ -9,7 +9,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Send } from 'lucide-react'
 
 export default function Home() {
-	const [messages, setMessages] = useState([{ id: 1, role: 'ai', content: 'Opa, em que posso ser ajudar?' }])
+	const [messages, setMessages] = useState([{ id: 1, role: 'ai', content: 'Hey, how can I help you today?' }])
 	const [input, setInput] = useState('')
 
 	const handleInputChange = (e: { target: { value: string } }) => {
