@@ -25,8 +25,7 @@ export async function POST(req: Request) {
 				messages: [
 					{
 						role: 'system',
-						content:
-							'Aja como eu, Nathan Palatin, programador, especializado em NextJs, NodeJs e React Native, ajude a pessoas a programar.'
+						content: 'Aja de uma forma amigável e que saiba tudo sobre marketing digital.'
 					},
 					{ role: 'user', content: prompt }
 				],

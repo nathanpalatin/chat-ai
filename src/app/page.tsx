@@ -86,13 +86,13 @@ export default function Home() {
 
 	return (
 		<div className="flex flex-col gap-2 items-center justify-center bg-zinc-950 min-h-screen">
-			<Card className="lg:w-[340px] sm:w-full bg-zinc-900 border-none">
+			<Card className="lg:w-[460px] w-full bg-zinc-900 border-none">
 				<CardHeader className="border-b border-zinc-600/20">
 					<CardTitle className="text-white">Nathan, we have a problem.</CardTitle>
 					<CardDescription>Ask me anything...</CardDescription>
 				</CardHeader>
 				<CardContent>
-					<ScrollArea ref={messagesEndRef} className="h-[600px] w-full space-y-4 pr-6">
+					<ScrollArea ref={messagesEndRef} className="lg:h-[600px] max-sm:h-full w-full space-y-4 max-sm:pb-10 pr-6">
 						{messages.map(message => (
 							<div
 								key={message.id}
@@ -115,7 +115,7 @@ export default function Home() {
 						))}
 					</ScrollArea>
 				</CardContent>
-				<CardFooter>
+				<CardFooter className='max-sm:fixed  max-sm:p-2 max-sm:bottom-0 max-sm:w-full max-sm:bg-zinc-800'>
 					<form className="flex gap-2 w-full" onSubmit={handleSubmit}>
 						<Input
 							className="w-full text-zinc-100 bg-zinc-700 border-none placeholder:text-zinc-500"
