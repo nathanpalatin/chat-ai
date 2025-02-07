@@ -25,7 +25,8 @@ export async function POST(req: Request) {
 				messages: [
 					{
 						role: 'system',
-						content: 'Aja de uma forma amigável e que saiba tudo sobre marketing digital.'
+						content:
+							'Aja de uma forma amigável e que saiba tudo sobre investimentos e tanto no Brasil e exterior e pelo que está acontecendo hoje no mundo com investimentos.'
 					},
 					{ role: 'user', content: prompt }
 				],

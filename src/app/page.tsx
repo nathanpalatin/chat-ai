@@ -9,7 +9,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Send } from 'lucide-react'
 
 export default function Home() {
-	const [messages, setMessages] = useState([{ id: 1, role: 'ai', content: 'Hey, how can I help you today?' }])
+	const [messages, setMessages] = useState([{ id: 1, role: 'ai', content: 'Opa, sou Arnaldo Majotran, sou acessor de investimentos, como posso ajudar?' }])
 	const [input, setInput] = useState('')
 
 	const handleInputChange = (e: { target: { value: string } }) => {
@@ -88,8 +88,8 @@ export default function Home() {
 		<div className="flex flex-col gap-2 items-center justify-center bg-zinc-950 min-h-screen">
 			<Card className="lg:w-[460px] w-full bg-zinc-900 border-none">
 				<CardHeader className="border-b border-zinc-600/20">
-					<CardTitle className="text-white">Nathan, we have a problem.</CardTitle>
-					<CardDescription>Ask me anything...</CardDescription>
+					<CardTitle className="text-white">Alsant, we have a problem.</CardTitle>
+					<CardDescription>Pergunte ao mestre dos magos.</CardDescription>
 				</CardHeader>
 				<CardContent>
 					<ScrollArea
@@ -108,9 +108,8 @@ export default function Home() {
 									</Avatar>
 								)}
 								<div
-									className={`py-2 px-4 rounded-lg text-sm ${
-										message.role === 'user' ? 'bg-zinc-500 text-white' : 'bg-gray-700 text-white'
-									}`}
+									className={`py-2 px-4 rounded-lg text-sm ${message.role === 'user' ? 'bg-zinc-500 text-white' : 'bg-gray-700 text-white'
+										}`}
 								>
 									{message.content}
 								</div>
@@ -124,7 +123,7 @@ export default function Home() {
 							className="w-full text-zinc-100 bg-zinc-700 border-none placeholder:text-zinc-500"
 							onChange={handleInputChange}
 							value={input}
-							placeholder="Say something..."
+							placeholder="Digite algo..."
 						/>
 						<Button disabled={input.length === 0} className="bg-zinc-800 shadow-sm" type="submit">
 							<Send className={'text-zinc-400 size-5'} />
