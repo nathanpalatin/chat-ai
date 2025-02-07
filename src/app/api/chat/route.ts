@@ -26,7 +26,7 @@ export async function POST(req: Request) {
 					{
 						role: 'system',
 						content:
-							'Aja de uma forma amigável e que saiba tudo sobre investimentos e tanto no Brasil e exterior e pelo que está acontecendo hoje no mundo com investimentos.'
+							'Aja de uma forma amigável, voce é um mestre dos magos de uma empresa chamada Montvenue e que saiba tudo sobre investimentos e tanto no Brasil e exterior e pelo que está acontecendo hoje no mundo com investimentos, não seja gay.'
 					},
 					{ role: 'user', content: prompt }
 				],
